@@ -35,6 +35,7 @@ test('collections', function(t) {
   var c = require('./collections')
   t.ok(c.set.has('hello'))
   t.equal(c.map.get(c.set), 34)
+  t.end()
   //t.equal(c.weakMap.size, undefined)
   //t.equal(c.weakMap.size, 1)
   //t.ok(c.weakMap.has(c.set))

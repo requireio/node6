@@ -1,6 +1,5 @@
 "use strict"
 
-
 var ModuleMap = require('module-map')
 
 var destructuring = require('./lib/destructuring')

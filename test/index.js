@@ -2,7 +2,7 @@
 
 var node6 = require('../')(__dirname)
 
-require('./test')
+require('./module-context')
 require('./arrow-functions')
 require('./blocks')
 require('./collections')

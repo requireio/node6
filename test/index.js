@@ -1,5 +1,7 @@
 "use strict"
 
+require('./bin')
+
 var node6 = require('../')(__dirname)
 
 require('./module-context')

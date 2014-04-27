@@ -1,22 +1,16 @@
-var traceur = require('traceur')
-var defaults = require('defaults')
+"use strict"
 
-module.exports = function compile(content, filename, options) {
-    options = defaults(options, {
-      experimental: true,
-      modules: false
-    })
-    traceur.options = defaults(traceur.options, options)
-    var sourceFile = new traceur.syntax.SourceFile(filename, content);
-    var parser = new traceur.syntax.Parser(sourceFile);
-    var tree = parser.parseScript();
-    var reporter = new traceur.util.ErrorReporter();
-    var transformer = new traceur.codegeneration.FromOptionsTransformer(reporter);
-    var transformedTree = transformer.transform(tree);
+var destructuring = require('./lib/destructuring')
+var polyfills = require('./lib/polyfills')
+var esnext = require('./lib/esnext')
+var defs = require('./lib/defs')
 
-    if (reporter.hadError()) {
-        var errors = reporter.errors.map(function(error) { return "    " + error; }).join("\n");
-        throw "traceur compilation failed: \n" + errors;
-    }
-    return traceur.outputgeneration.TreeWriter.write(transformedTree);
+module.exports = transpile
+
+function transpile(src) {
+  src = polyfills(src)
+  src = destructuring(src)
+  src = defs(src)
+  src = esnext(src)
+  return src
 }

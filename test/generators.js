@@ -1,3 +1,5 @@
+var test = require('tape')
+
 function *range(max, step) {
   var count = 0;
   step = step || 1;
@@ -17,4 +19,7 @@ while (!(info = gen.next()).done) {
   values.push(info.value);
 }
 
-module.exports = values
+test('generators', function(t) {
+  t.deepEqual(values, [0, 3, 6, 9, 12, 15, 18])
+  t.end()
+})

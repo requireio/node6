@@ -1,6 +1,6 @@
 {
   "name": "node6",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,17 +15,17 @@
     "defaults": "^1.0.0",
     "defs": "^0.6.2",
     "es6-destructuring-jstransform": "^0.1.0",
-    "es6-map": "git://github.com/medikoo/es6-map",
-    "es6-set": "git://github.com/medikoo/es6-set",
-    "es6-promise": "^0.1.1",
-    "es6-shim": "^0.10.1",
+    "es6-map": "~0.1.0",
+    "es6-set": "~0.1.0",
+    "es6-promise": "~1.0.0",
+    "es6-shim": "~0.11.0",
     "esnext": "^0.7.7",
     "esprima-fb": "3001.1.0-dev-harmony-fb",
     "faucet": "0.0.1",
     "resolve": "^0.6.3",
-    "module-map": "0.0.1",
+    "module-map": "0.0.2",
     "tape": "^2.12.3",
-    "traceur": "0.0.33"
+    "traceur": "0.0.41"
   },
   "devDependencies": {
     "co": "^3.0.5",

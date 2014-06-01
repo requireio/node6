@@ -1,5 +1,6 @@
 # node6
 
+### hacking all the transpilers and polyfills together to transparently support much es6 in node
 
 ### CLI
 

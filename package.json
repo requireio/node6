@@ -4,7 +4,8 @@
   "description": "hacking all the transpilers and polyfills together to transparently support much es6 in node",
   "main": "index.js",
   "scripts": {
-    "test": "node test"
+    "pretest": "npm prune",
+    "test": "tape test/index.js"
   },
   "bin": {
     "node6": "bin/node6"
@@ -13,22 +14,13 @@
   "license": "ISC",
   "dependencies": {
     "defaults": "^1.0.0",
-    "defs": "^0.6.2",
-    "es6-destructuring-jstransform": "^0.1.0",
-    "es6-map": "~0.1.0",
-    "es6-set": "~0.1.0",
-    "es6-promise": "~1.0.0",
-    "es6-shim": "~0.11.0",
-    "esnext": "^0.7.7",
-    "esprima-fb": "3001.1.0-dev-harmony-fb",
-    "resolve": "^0.6.3",
-    "module-map": "0.0.2",
-    "traceur": "0.0.41"
+    "es6-shim": "~0.18.0",
+    "traceur": "0.0.66"
   },
   "devDependencies": {
     "co": "^3.0.5",
     "faucet": "0.0.1",
-    "tape": "^2.12.3",
-    "bl": "^0.8.0"
+    "tape": "~3.0.0",
+    "bl": "~0.9.3"
   }
 }

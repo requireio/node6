@@ -1,16 +1,13 @@
 "use strict"
 
-var destructuring = require('./lib/destructuring')
-var polyfills = require('./lib/polyfills')
-var esnext = require('./lib/esnext')
-var defs = require('./lib/defs')
+var compile = require('traceur').compile;
+var defaults = require('defaults')
+var traceurOptions = {
+  modules: 'commonjs',
+  blockBinding: true
+}
 
-module.exports = transpile
-
-function transpile(src) {
-  src = polyfills(src)
-  src = destructuring(src)
-  src = defs(src)
-  src = esnext(src)
-  return src
+module.exports = function transpile(src, options) {
+  var compiled = compile(src, defaults(options, traceurOptions))
+  return compiled
 }

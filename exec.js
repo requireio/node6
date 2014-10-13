@@ -27,6 +27,8 @@ if (process._eval != null) {
   node6(entryPoint)
   require('module').runMain();
 } else {
+  console.error('node6 repl currently unsupported. Sorry!\nNote -e and -p flags work though.')
+  process.exit(1)
   // run the REPL, or run from stdin
 
   // If -i or --interactive were passed, or stdin is a TTY.

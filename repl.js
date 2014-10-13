@@ -4,11 +4,7 @@ var Repl = require('module').requireRepl()
 var Domain = require('domain')
 var defaults = require('defaults')
 
-var Promise = require('es6-promise')
-var Map = require('es6-map')
-var Set = require('es6-set')
-
-var transpile = require('./index').transpile
+var transpile = require('./transpile')
 
 module.exports = start
 
@@ -35,7 +31,7 @@ function start(opts) {
   // compile src and add new globals to context.
   function eval_(src, context, filename, callback) {
     try {
-      src = transpile(src)
+      src = transpile(src, {modules: 'inline'})
     } catch(err) {
       err.name = 'SyntaxError'
       return callback(err, src)

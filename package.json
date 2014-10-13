@@ -1,7 +1,7 @@
 {
   "name": "node6",
-  "version": "0.0.3",
-  "description": "hacking all the transpilers and polyfills together to transparently support much es6 in node",
+  "version": "1.0.0",
+  "description": "Transparently support as much es6 in node as possible",
   "main": "index.js",
   "scripts": {
     "pretest": "npm prune",

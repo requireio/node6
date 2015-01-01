@@ -1,5 +1,9 @@
 # node6
 
+## Deprecated
+
+Use [6to5](https://6to5.org/) instead, it is fantastic.
+
 ### hacking all the transpilers and polyfills together to transparently support much es6 in node
 
 ### CLI
